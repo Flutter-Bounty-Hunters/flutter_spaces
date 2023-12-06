@@ -1,0 +1,110 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Flutter Spaces</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="/images/favicon/favicon.ico">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <link href="/styles/homepage.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <main>
+      <header>
+        <div class="foreground">
+          <img src="images/homepage/logo_circle.png" class="logo">
+
+          <div class="title">WEEKLY FLUTTER SPACE</div>
+
+          <!-- This spacer has size zero unless screen is narrow -->
+          <!-- On narrow screen, this spacer takes up the same height as the phone image -->
+          <div class="spacer-for-narrow">&nbsp;</div>
+
+          <div class="upsell">Join us every week for &NewLine; any and all Flutter topics!</div>
+
+          <div class="hosts">
+            <p class="title">HOSTS</p>
+            <div class="host-container">
+              <div class="host matt">
+                <img src="/images/homepage/photo_matt.png">
+                <p>Matt Carroll</p>
+              </div>
+              <div class="host ray">
+                <img src="/images/homepage/photo_ray.png">
+                <p>Ray Li</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="background">
+          <div class="waves-and-phone">
+            <div class="sound-waves-left">&nbsp;</div>
+            <div class="phone">
+              <img src="/images/homepage/phone-space-preview.png">
+
+              <div class="next-show-date">
+                <p class="title">NEXT SPACE</p>
+                <!-- This display date is filled by JS -->
+                <p id="nextShowDate" class="date">&nbsp;</p>
+              </div>
+            </div>
+            <div class="sound-waves-right">&nbsp;</div>
+          </div>
+        </div>
+      </header>
+
+      <div id="x-divider" style="display: flex;">
+        <hr class="divider" style="flex: 1; align-self: center;">
+        <img src="/images/homepage/x-logo.png" class="logo">
+        <hr class="divider" style="flex: 1; align-self: center;">
+      </div>
+
+      <p class="follow-hosts">Follow <a href="https://x.com/suprdeclarative" target="_blank">Matt</a> and <a href="https://x.com/RayLiVerified" target="_blank">Ray</a> on X</p>
+
+      <div id="post-timeline">
+        {% for tweet in show_tweets %}
+          {{ tweet }}
+        {% endfor %}
+
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </main>
+    <footer>
+      <hr class="divider">
+      <h4>BROUGHT TO YOU BY</h4>
+      <p><a href="https://codelessly.com/" target="_blank">Codelessy</a> <a href="https://flutterbountyhunters.com" target="_blank">Flutter Bounty Hunters</a> <a href="https://superdeclarative.com" target="_blank">SuperDeclarative!</a></p>
+    </footer>
+
+    <script>
+      onload = (function() {
+        // Find the date of the next show.
+        var now = new Date();
+        var nextShowDate = new Date();
+        nextShowDate.setDate(now.getDate() + (5 + 7 - now.getDay()) % 7);
+
+        var dayName = nextShowDate.toLocaleString('default', { weekday: 'long' });
+        var monthName = nextShowDate.toLocaleString('default', { month: 'short' }).toUpperCase();
+        var dayOfMonth = nextShowDate.getDay();
+        var year = nextShowDate.getFullYear();
+
+        // Set the next show date display string.
+        var nextShowDateDisplay = document.getElementById("nextShowDate");
+        nextShowDateDisplay.innerHTML = "WEDNESDAY • " + monthName + " " + dayOfMonth + ", " + year +"<BR>12PM PACIFIC";
+      });
+    </script>
+  </body>
+</html>

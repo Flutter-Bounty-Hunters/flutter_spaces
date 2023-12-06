@@ -1,0 +1,271 @@
+$screenBackground: #48B3E0;
+
+$breakpointSmall: 1100px;
+$breakpointMedium: 1300px;
+$breakpointWide: 1600px;
+
+html, body {
+  background: $screenBackground;
+}
+
+header {
+  position: relative;
+
+  padding-top: 24px;
+
+  color: WHITE;
+  text-align: center;
+
+  background-image: url("/images/homepage/top-light.png");
+  background-repeat: no-repeat;
+  background-position: center top;
+
+  .foreground {
+    position: relative;
+    z-index: 100;
+
+    .logo {
+      margin-bottom: 48px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+
+      text-shadow: 0px 3px #3BA3D0;
+    }
+
+    .spacer-for-narrow {
+      height: 0px;
+
+      @media (max-width: $breakpointSmall) {
+        height: 475px;
+      }
+    }
+
+    .upsell {
+      margin: auto;
+      margin-top: 122px;
+      margin-bottom: 122px;
+
+      max-width: 600px;
+      padding-left: 24px;
+      padding-right: 24px;
+
+      @media (max-width: $breakpointSmall) {
+        margin-bottom: 72px;
+      }
+
+      font-size: 36px;
+      font-weight: bold;
+      font-style: italic;
+
+      text-shadow: 0px 5px #3BA3D0;
+
+      white-space: pre-line;
+    }
+
+    .hosts {
+      margin-bottom: 90px;
+
+      text-align: center;
+
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        text-shadow: none;
+      }
+
+      .host-container {
+        display: grid;
+        grid-template-columns: repeat(17, 10px);
+        grid-template-rows: 1fr;
+
+        margin: auto;
+        width: 170px;
+      }
+
+      .host {
+        width: 90px;
+
+        font-size: 14px;
+        font-weight: bold;
+
+        p {
+          margin-bottom: 0;
+        }
+      }
+
+      .host.matt {
+        grid-column: 0;
+        z-index: 1;
+      }
+      .host.ray {
+       grid-column: 9;
+      }
+    }
+  }
+
+  .background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 1;
+
+    @media (max-width: $breakpointSmall) {
+      top: 96px;
+    }
+
+    .waves-and-phone {
+      position: relative;
+      display: flex;
+      flex-flow: row;
+
+      margin-top: 96px;
+
+      .sound-waves-left {
+        flex: 6;
+
+        background-image: url("/images/homepage/sound-wave_left.png");
+        background-repeat: repeat no-repeat;
+        background-position: right;
+      }
+
+      .sound-waves-right {
+        flex: 1;
+
+        background-image: url("/images/homepage/sound-wave_right.png");
+        background-repeat: repeat no-repeat;
+        background-position: left;
+      }
+
+      @media (max-width: $breakpointWide) {
+        .sound-waves-left {
+          flex: 10;
+        }
+      }
+
+      @media (max-width: $breakpointMedium) {
+        .sound-waves-left {
+          flex: 40;
+        }
+      }
+
+      @media (max-width: $breakpointSmall) {
+        .sound-waves-left {
+          flex: 1;
+        }
+      }
+
+      .phone {
+        position: relative;
+
+        padding-left: 24px;
+        padding-right: 24px;
+
+        .next-show-date {
+          position: absolute;
+          top: 64px;
+          left: 0px;
+          width: 330px;
+
+          padding-top: 8px;
+          padding-bottom: 8px;
+
+          background: WHITE;
+          border-radius: 12px;
+
+          p.title {
+            margin: 0;
+            margin-bottom: 0.25em;
+
+            color: #BDB3E5;
+            font-size: 12px;
+            font-weight: bold;
+          }
+
+          p.date {
+            margin: 0;
+
+            color: #7856FF;
+            font-size: 18px;
+            font-weight: bold;
+            line-height: 1.2em;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+#x-divider {
+  .logo {
+    display: block;
+    margin: auto;
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 2px;
+  background: #77C4E5;
+  border: none;
+}
+
+.follow-hosts {
+  margin-top: 24px;
+
+  text-align: center;
+
+  color: #87DBFF;
+  font-size: 18px;
+  font-weight: bold;
+
+  a {
+    color: WHITE;
+  }
+}
+
+#post-timeline {
+  padding-top: 48px;
+  padding-bottom: 48px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  text-align: center;
+
+  .twitter-tweet {
+    margin: auto;
+    margin-bottom: 48px !important;
+  }
+}
+
+footer {
+  text-align: center;
+
+  h4 {
+    color: #87D7FA;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  a {
+    display: inline-block;
+    @media (max-width: $breakpointSmall) {
+      display: block;
+      margin: auto;
+      margin-bottom: 1em;
+    }
+
+    width: 175px;
+    text-align: center;
+
+    color: WHITE;
+    font-size: 14px;
+    font-weight: bold;
+  }
+}
