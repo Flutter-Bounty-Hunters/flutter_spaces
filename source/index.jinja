@@ -107,11 +107,11 @@
         // Find the date of the next show.
         var now = new Date();
         var nextShowDate = new Date();
-        nextShowDate.setDate(now.getDate() + (5 + 7 - now.getDay()) % 7);
+        nextShowDate.setDate(now.getDate() + ((3 - now.getDay()) % 7));
 
         var dayName = nextShowDate.toLocaleString('default', { weekday: 'long' });
         var monthName = nextShowDate.toLocaleString('default', { month: 'short' }).toUpperCase();
-        var dayOfMonth = nextShowDate.getDay();
+        var dayOfMonth = nextShowDate.getDate();
         var year = nextShowDate.getFullYear();
 
         // Set the next show date display string.
