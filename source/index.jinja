@@ -90,9 +90,6 @@
 
       <div id="post-timeline">
         {% for episode in episodes %}
-          <blockquote class="twitter-tweet" data-media-max-width="560">
-            {{ episode.tweet }}
-          </blockquote>
 
           {% if episode.podcast_id %}
           <div style="margin: auto; max-width: 500px; height: 200px; margin-bottom: 20px; border-radius: 6px; overflow: hidden;"><iframe style="width: 100%; height: 200px;" frameborder="no" scrolling="no" allow="clipboard-write" seamless src="https://player.captivate.fm/episode/{{ episode.podcast_id }}"></iframe></div>
