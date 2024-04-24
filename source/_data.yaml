@@ -1,4 +1,22 @@
 episodes:
+  # Long live Flutter
+  - podcast_id: 86ff7b31-8b94-4a49-8401-67ed459ea922
+
+  # Can Flutter live forever
+  - podcast_id: 402b85c9-5a0f-4416-91c9-e4a3562aae41
+
+  # All things Flutter - April 3
+  - podcast_id: 681e40f4-4bdb-4ffb-bbfa-857863d2b1e4
+
+  # Flutter games and Flutter framework API design
+  - podcast_id: be304424-e288-4f4f-af9d-6adbda89404d
+
+  # Flutter's new animation style with Taha Tesser
+  - podcast_id: 957c12e4-e18e-4e79-a34e-c91c78690bfb
+
+  # Open source - a tool or religion?
+  - podcast_id: f52e4adf-127a-4391-be48-90f2ad5ac8ca
+
   - podcast_id: 264e7ec5-b895-4572-8b97-53c0f0bae1db
 
   - podcast_id: fb2788ea-a561-45da-98e8-614572d99d08
