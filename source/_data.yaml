@@ -1,4 +1,7 @@
 episodes:
+  # A Flutter developer's view of the history of web browsers
+  - podcast_id: dfb56f42-879e-47f0-b0e1-5ea286f404ee
+
   # Long live Flutter
   - podcast_id: 86ff7b31-8b94-4a49-8401-67ed459ea922
 
