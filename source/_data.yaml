@@ -1,4 +1,7 @@
 episodes:
+  # Jaspr, Static Shock, Flutter layoffs
+  - podcast_id: 115e127a-f026-4b9a-a77e-e1a60e0d8cf0
+
   # A Flutter developer's view of the history of web browsers
   - podcast_id: dfb56f42-879e-47f0-b0e1-5ea286f404ee
 
