@@ -1,4 +1,16 @@
 episodes:
+  # Building a FinTech app with Flutter - featuring Mezzi
+  - podcast_id: b85029ee-24c0-478f-a6e1-841249501ec0
+
+  # What're your favorite Flutter and Dart packages?
+  - podcast_id: 6d9977b7-3662-4b15-80ca-ffbb789b102d
+
+  # Google I/O 2024 Recap
+  - podcast_id: 97aa98ce-6d64-4e95-8cdf-67304af4dd26
+
+  # Styling Flutter with Mix with Leo
+  - podcast_id: 32d6d898-3003-472a-8bd3-c1d170025a55
+
   # Jaspr, Static Shock, Flutter layoffs
   - podcast_id: 115e127a-f026-4b9a-a77e-e1a60e0d8cf0
 
