@@ -1,4 +1,10 @@
 episodes:
+  # Shaders in Flutter
+  - podcast_id: b9fa21bf-372f-4ce4-b08f-380e5f752b85
+
+  # WWDC Recap
+  - podcast_id: ef4e6b88-f4c4-44c6-8fd1-bb02bf2c7c1b
+
   # Building a FinTech app with Flutter - featuring Mezzi
   - podcast_id: b85029ee-24c0-478f-a6e1-841249501ec0
 
