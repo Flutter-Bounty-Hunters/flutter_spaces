@@ -1,4 +1,16 @@
 episodes:
+  # Generate blogs, docs, and marketing pages with Static Shock and Dart
+  - podcast_id: da14e410-add0-4a70-8362-b7e93303061c
+
+  # Use Flutter Deck to create your next slideshow presentation!
+  - podcast_id: e93bbbea-18fd-42ab-9b0c-e99f702dd32c
+
+  # Did you go to FlutterCon? Tell us how it went!
+  - podcast_id: 6242c301-4da8-4392-8e7e-c915dbb0468f
+
+  # All the Flutter devs who weren't cool enough for FlutterCon
+  - podcast_id: 3e9c9a0e-35e8-4a1d-9682-0b1396b3292f
+
   # The "late" keyword in Dart
   - podcast_id: f1ce7273-741d-49d8-8fde-d82ea0bd07c0
 
