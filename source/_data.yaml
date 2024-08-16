@@ -1,4 +1,13 @@
 episodes:
+  # Donn Felker
+  - podcast_id: b86927e4-6a09-458e-99a1-a69210eb4666
+
+  # Flutter 3.24 and Dart 3.5
+  - podcast_id: ddd10cd2-36ed-4e35-bcfd-4f3cd53fa166
+
+  # Flutter on Windows
+  - podcast_id: 6960d399-c8b8-4f3d-a446-c2162417d80b
+
   # Generate blogs, docs, and marketing pages with Static Shock and Dart
   - podcast_id: da14e410-add0-4a70-8362-b7e93303061c
 
