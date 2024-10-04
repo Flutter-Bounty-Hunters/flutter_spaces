@@ -1,4 +1,19 @@
 episodes:
+  # Flutter platform integration discussion
+  - podcast_id: 23049481-f810-4f8f-90ed-16f81d4ee104
+
+  # FlutterCon USA Recap
+  - podcast_id: 047ba9b7-6c3f-472f-86e9-c6e0dc7c12ef
+
+  # Flutter v3.24.2 - How's it going for you?
+  - podcast_id: f1c45376-46d5-49a9-94e8-df79ddeb7593
+
+  # Pioneering Flutter for desktop and web with Superlist
+  - podcast_id: 7e3b0fc2-808e-4ad8-aecf-3a3e77f1c0f4
+
+  # What makes a great Flutter developer?
+  - podcast_id: 17c92291-ac53-4fa1-9943-eb621dafa4c6
+
   # Donn Felker
   - podcast_id: b86927e4-6a09-458e-99a1-a69210eb4666
 
