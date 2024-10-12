@@ -1,4 +1,7 @@
 episodes:
+  # Exploring Flutter's adaptive layout with Martijn van Dijk
+  - podcast_id: 29cb8438-7eba-488b-8579-27a072f19945
+
   # Flutter platform integration discussion
   - podcast_id: 23049481-f810-4f8f-90ed-16f81d4ee104
 
