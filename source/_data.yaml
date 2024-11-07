@@ -1,4 +1,16 @@
 episodes:
+  # Flutter Spaces one year anniversary - open chat
+  - podcast_id: 528a8e0b-967c-4dd5-b078-11fb9b36e4c8
+
+  # We're forking Flutter - introducing Flock and Nest
+  - podcast_id: 922da817-347e-4d75-b357-254f1f120708
+
+  # Error reporting and logging in Flutter with Jonas Uekotter
+  - podcast_id: bcddaf32-5f72-486e-93d6-886b90eec478
+
+  # Let's talk about navigation in Flutter
+  - podcast_id: 2ecae2b1-bcf4-4df5-bbd0-87404d1d909f
+
   # Exploring Flutter's adaptive layout with Martijn van Dijk
   - podcast_id: 29cb8438-7eba-488b-8579-27a072f19945
 
