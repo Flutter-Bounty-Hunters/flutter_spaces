@@ -1,4 +1,10 @@
 episodes:
+  # Building a daily memory journal in Flutter ft Marco Napoli
+  - podcast_id: 2cf97ba8-fe6f-41e5-b9b3-ecdd6a86260d
+
+  # Offline mode in Flutter with Loon ft Dan Reynold
+  - podcast_id: d38eb8bf-5c73-48b6-a522-beee85be0d6b
+
   # Flutter Spaces one year anniversary - open chat
   - podcast_id: 528a8e0b-967c-4dd5-b078-11fb9b36e4c8
 
