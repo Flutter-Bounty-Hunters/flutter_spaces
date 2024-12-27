@@ -1,4 +1,10 @@
 episodes:
+  # Testing Flutter with Patrol ft Mateusz
+  - podcast_id: a7ec5ceb-1363-45d2-8f5d-17fdc58384ce
+
+  # Widget Book for Flutter ft Lucas Josefiak
+  - podcast_id: 9256d444-a2c0-468e-87cf-3415f8890a37
+
   # Building a daily memory journal in Flutter ft Marco Napoli
   - podcast_id: 2cf97ba8-fe6f-41e5-b9b3-ecdd6a86260d
 
