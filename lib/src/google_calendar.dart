@@ -70,7 +70,7 @@ Future<calendar.Event?> fetchNextEvent() async {
 }
 
 Map<String, dynamic> _loadGoogleApiKey() {
-  late final String keyText;
+  late final String? keyText;
 
   // Try loading key from local file first, then try loading from environment
   // variable if no local value is available.
@@ -78,7 +78,7 @@ Map<String, dynamic> _loadGoogleApiKey() {
   if (calendarKeyFile.existsSync()) {
     keyText = calendarKeyFile.readAsStringSync();
   } else {
-    final keyText = Platform.environment['GOOGLE_CALENDAR_API_KEY'];
+    keyText = Platform.environment['GOOGLE_CALENDAR_API_KEY'];
     if (keyText == null || keyText.trim().isEmpty) {
       throw Exception("Missing Google Calendar API Key!");
     }
