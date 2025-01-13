@@ -110,18 +110,30 @@
     <script>
       onload = (function() {
         // Find the date of the next show.
-        var now = new Date();
-        var nextShowDate = new Date();
-        nextShowDate.setDate(now.getDate() + ((3 - now.getDay()) % 7));
+        var nextShowDate = new Date({{ calendar.next.timestamp }});
 
-        var dayName = nextShowDate.toLocaleString('default', { weekday: 'long' });
-        var monthName = nextShowDate.toLocaleString('default', { month: 'short' }).toUpperCase();
-        var dayOfMonth = nextShowDate.getDate();
-        var year = nextShowDate.getFullYear();
+<!--        var dayName = nextShowDate.toLocaleString('default', { weekday: 'long' });-->
+<!--        var monthName = nextShowDate.toLocaleString('default', { month: 'short' }).toUpperCase();-->
+<!--        var dayOfMonth = nextShowDate.getDate();-->
+<!--        var year = nextShowDate.getFullYear();-->
+
+        const formattedDate = nextShowDate.toLocaleString('en-US', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
+        });
+
+        const formattedTime = nextShowDate.toLocaleString('en-US', {
+          hour: 'numeric',
+          minute: '2-digit',
+          timeZoneName: 'short'
+        });
 
         // Set the next show date display string.
         var nextShowDateDisplay = document.getElementById("nextShowDate");
-        nextShowDateDisplay.innerHTML = "WEDNESDAY • " + monthName + " " + dayOfMonth + ", " + year +"<BR>12PM PACIFIC";
+        nextShowDateDisplay.innerHTML = formattedDate + "<BR>" + formattedTime;
+<!--        nextShowDateDisplay.innerHTML = "WEDNESDAY • " + monthName + " " + dayOfMonth + ", " + year +"<BR>12PM PACIFIC";-->
       });
     </script>
   </body>

@@ -7,7 +7,10 @@ environment:
   sdk: ^3.0.0
 
 dependencies:
-  static_shock: ^0.0.1
+  static_shock: ^0.0.14
+
+  googleapis: ^13.2.0
+  googleapis_auth: ^1.6.0
 
 dev_dependencies:
   lints: ^2.0.0

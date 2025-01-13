@@ -6,6 +6,8 @@ on:
 
 jobs:
   build:
+    env:
+      GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDAR_API_KEY }}
     runs-on: ubuntu-latest
     steps:
       # Checkout the repository

@@ -1,3 +1,7 @@
+# Google Calendar API Key (on local machine)
+# In CI the API key is stored in an environment variable.
+google-calendar
+
 # Build output
 /build
 
