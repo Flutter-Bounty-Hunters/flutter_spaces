@@ -2,7 +2,9 @@ name: Build and deploy Flutter Spaces website
 on:
   push:
     branches:
-      main
+      - main
+  schedule:
+    - cron: '0 17 * * 6' # 9AM Pacific Time (17:00 UTC) every Saturday
 
 jobs:
   build:
