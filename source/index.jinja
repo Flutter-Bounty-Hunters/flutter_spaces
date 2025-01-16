@@ -89,6 +89,18 @@
       <p class="follow-hosts">Follow <a href="https://x.com/suprdeclarative" target="_blank">Matt</a> and <a href="https://x.com/RayLiVerified" target="_blank">Ray</a> on X</p>
 
       <div id="post-timeline">
+        <div id="episodePlayer">
+          <div style="margin: auto; max-width: 500px; height: 200px; margin-bottom: 20px; border-radius: 6px; overflow: hidden;"><iframe style="width: 100%; height: 200px;" frameborder="no" scrolling="no" allow="clipboard-write" seamless src="https://player.captivate.fm/episode/{{ loadedEpisodes[0].id }}"></iframe></div>
+        </div>
+        {% for episode in loadedEpisodes %}
+          <div onclick="loadEpisode('{{ episode.id }}')">
+            <h4>{{ episode.title }}</h4>
+            <p>{{ episode.id }}</p>
+            <br>
+            <br>
+          </div>
+        {% endfor %}
+
         {% for episode in episodes %}
 
           {% if episode.podcast_id %}
@@ -129,6 +141,13 @@
         var nextShowDateDisplay = document.getElementById("nextShowDate");
         nextShowDateDisplay.innerHTML = formattedDate + "<BR>" + formattedTime;
       });
+
+      loadEpisode = function(id) {
+        console.log("Loading episode: " + id);
+
+        var episodePlayer = document.getElementById("episodePlayer");
+        episodePlayer.innerHTML = `<div style="margin: auto; max-width: 500px; height: 200px; margin-bottom: 20px; border-radius: 6px; overflow: hidden;"><iframe style="width: 100%; height: 200px;" frameborder="no" scrolling="no" allow="clipboard-write" seamless src="https://player.captivate.fm/episode/${id}"></iframe></div>`;
+      }
     </script>
   </body>
 </html>

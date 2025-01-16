@@ -12,6 +12,10 @@ dependencies:
   googleapis: ^13.2.0
   googleapis_auth: ^1.6.0
 
+  captivate:
+    git:
+      url: https://github.com/Flutter-Bounty-Hunters/captivate
+
 dev_dependencies:
   lints: ^2.0.0
   test: ^1.21.0
