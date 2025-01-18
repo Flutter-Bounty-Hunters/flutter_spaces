@@ -9,6 +9,8 @@ on:
 jobs:
   build:
     env:
+      CAPTIVATE_USERNAME: ${{ secrets.CAPTIVATE_USERNAME }}
+      CAPTIVATE_TOKEN: ${{ secrets.CAPTIVATE_TOKEN }}
       GOOGLE_CALENDAR_API_KEY: ${{ secrets.GOOGLE_CALENDAR_API_KEY }}
     runs-on: ubuntu-latest
     steps:

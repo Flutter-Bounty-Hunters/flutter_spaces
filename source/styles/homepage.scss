@@ -1,271 +1,388 @@
-$screenBackground: #48B3E0;
+$screenBackground: #14171A;
 
 $breakpointSmall: 1100px;
 $breakpointMedium: 1300px;
 $breakpointWide: 1600px;
 
 html, body {
+  position: relative;
+
   background: $screenBackground;
 }
 
-header {
-  position: relative;
+//---------- LANDSCAPE LAYOUT ----------//
+body {
+  @media (aspect-ratio > 1) {
 
-  padding-top: 24px;
-
-  color: WHITE;
-  text-align: center;
-
-  background-image: url("/images/homepage/top-light.png");
-  background-repeat: no-repeat;
-  background-position: center top;
-
-  .foreground {
-    position: relative;
-    z-index: 100;
-
-    .logo {
-      margin-bottom: 48px;
+    main {
+      display: flex;
+      flex-direction: row;
+      width: 100vw;
+      height: 100vh;
     }
 
-    .title {
-      font-size: 24px;
-      font-weight: bold;
+    #mainPane {
+      flex: 1;
 
-      text-shadow: 0px 3px #3BA3D0;
-    }
-
-    .spacer-for-narrow {
-      height: 0px;
-
-      @media (max-width: $breakpointSmall) {
-        height: 475px;
-      }
-    }
-
-    .upsell {
-      margin: auto;
-      margin-top: 122px;
-      margin-bottom: 122px;
-
-      max-width: 600px;
-      padding-left: 24px;
-      padding-right: 24px;
-
-      @media (max-width: $breakpointSmall) {
-        margin-bottom: 72px;
-      }
-
-      font-size: 36px;
-      font-weight: bold;
-      font-style: italic;
-
-      text-shadow: 0px 5px #3BA3D0;
-
-      white-space: pre-line;
-    }
-
-    .hosts {
-      margin-bottom: 90px;
-
-      text-align: center;
-
-      .title {
-        font-size: 20px;
-        font-weight: bold;
-        text-shadow: none;
-      }
-
-      .host-container {
-        display: grid;
-        grid-template-columns: repeat(17, 10px);
-        grid-template-rows: 1fr;
-
-        margin: auto;
-        width: 170px;
-      }
-
-      .host {
-        width: 90px;
-
-        font-size: 14px;
-        font-weight: bold;
-
-        p {
-          margin-bottom: 0;
-        }
-      }
-
-      .host.matt {
-        grid-column: 0;
-        z-index: 1;
-      }
-      .host.ray {
-       grid-column: 9;
-      }
-    }
-  }
-
-  .background {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-
-    z-index: 1;
-
-    @media (max-width: $breakpointSmall) {
-      top: 96px;
-    }
-
-    .waves-and-phone {
       position: relative;
       display: flex;
-      flex-flow: row;
+      flex-direction: column;
+      align-items: center;
 
-      margin-top: 96px;
+      header {
+        padding: 0 128px;
 
-      .sound-waves-left {
-        flex: 6;
+        text-align: center;
 
-        background-image: url("/images/homepage/sound-wave_left.png");
-        background-repeat: repeat no-repeat;
-        background-position: right;
-      }
+        #mascot {
+          margin-bottom: 20px;
+          height: 128px;
+          opacity: 0.5;
+        }
 
-      .sound-waves-right {
-        flex: 1;
+        h1 {
+          text-align: center;
 
-        background-image: url("/images/homepage/sound-wave_right.png");
-        background-repeat: repeat no-repeat;
-        background-position: left;
-      }
+          color: WHITE;
+          text-transform: uppercase;
+          letter-spacing: 0.4em;
+        }
 
-      @media (max-width: $breakpointWide) {
-        .sound-waves-left {
-          flex: 10;
+        .divider {
+          height: 1px;
+          max-width: 600px;
+          margin: 16px 48px;
+
+          background: #252525;
+        }
+
+        .subtitle {
+          text-align: center;
+
+          color: #949494;
+          text-transform: uppercase;
+          letter-spacing: 0.2em;
         }
       }
 
-      @media (max-width: $breakpointMedium) {
-        .sound-waves-left {
-          flex: 40;
-        }
-      }
+      #episodePlayer {
+        width: 600px;
 
-      @media (max-width: $breakpointSmall) {
-        .sound-waves-left {
-          flex: 1;
-        }
-      }
-
-      .phone {
-        position: relative;
-
-        padding-left: 24px;
-        padding-right: 24px;
-
-        .next-show-date {
-          position: absolute;
-          top: 64px;
-          left: 0px;
-          width: 330px;
-
-          padding-top: 8px;
-          padding-bottom: 8px;
-
+        #playerContainer {
           background: WHITE;
-          border-radius: 12px;
-
-          p.title {
-            margin: 0;
-            margin-bottom: 0.25em;
-
-            color: #BDB3E5;
-            font-size: 12px;
-            font-weight: bold;
-          }
-
-          p.date {
-            margin: 0;
-
-            color: #7856FF;
-            font-size: 18px;
-            font-weight: bold;
-            line-height: 1.2em;
-          }
+          border-radius: 6px;
         }
       }
 
-    }
-  }
-}
+      #nextShowCalendar {
+        text-align: center;
 
-#x-divider {
-  .logo {
-    display: block;
-    margin: auto;
-  }
-}
+        h3 {
+          margin: 0;
 
-.divider {
-  width: 100%;
-  height: 2px;
-  background: #77C4E5;
-  border: none;
-}
+          text-align: left;
 
-.follow-hosts {
-  margin-top: 24px;
+          color: #3C3C3C;
+          font-size: 12px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
 
-  text-align: center;
+        #nextShowDate {
+          margin: 0;
+          margin-bottom: 8px;
 
-  color: #87DBFF;
-  font-size: 18px;
-  font-weight: bold;
+          color: #656565;
+          font-size: 14px;
+          font-weight: bold;
+        }
 
-  a {
-    color: WHITE;
-  }
-}
+        a {
+          color: #4DBEFF;
+          font-size: 12px;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+      }
 
-#post-timeline {
-  padding-top: 48px;
-  padding-bottom: 48px;
-  padding-left: 24px;
-  padding-right: 24px;
+      #attribution {
+        margin-bottom: 48px;
 
-  text-align: center;
+        color: #394B5D;
+        font-size: 12px;
+        font-weight: bold;
 
-  .twitter-tweet {
-    margin: auto;
-    margin-bottom: 48px !important;
-  }
-}
-
-footer {
-  text-align: center;
-
-  h4 {
-    color: #87D7FA;
-    font-size: 12px;
-    font-weight: bold;
-  }
-
-  a {
-    display: inline-block;
-    @media (max-width: $breakpointSmall) {
-      display: block;
-      margin: auto;
-      margin-bottom: 1em;
+        a {
+          color: #4DBEFF;
+          text-decoration: none;
+        }
+      }
     }
 
-    width: 175px;
-    text-align: center;
+    #episodeDirectoryPane {
+      width: 300px;
+      padding: 8px;
 
-    color: WHITE;
-    font-size: 14px;
-    font-weight: bold;
-  }
-}
+      #episodeDirectoryWindow {
+        height: 100%;
+
+        background: WHITE;
+        border-radius: 8px;
+        padding: 8px;
+
+        overflow-y: auto;
+
+        .episode-list-item {
+          position: relative;
+          padding-top: 4px;
+          padding-bottom: 4px;
+
+          &:not(:last-child)::after {
+            content: ""; /* Creates the divider */
+            position: absolute;
+            bottom: 0; /* Position it at the bottom of the list item */
+            left: 12px; /* Add padding to the left of the divider */
+            right: 12px; /* Add padding to the right of the divider */
+            height: 1px; /* Thickness of the divider */
+            background-color: #EEE; /* Divider color */
+          }
+
+          & > .content {
+            padding: 8px;
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            h4 {
+              margin-bottom: 0.2em;
+
+              color: BLACK;
+              font-size: 13px;
+              font-weight: bold;
+            }
+
+            .date {
+              margin-bottom: 0;
+
+              color: #A7A7A7;
+              font-size: 10px;
+            }
+          }
+
+          &:hover > .content {
+            background: #EEEEEE;
+          }
+
+          &.selected > .content {
+            background: #4CBBF7;
+
+            cursor: default;
+
+            h4 {
+              color: WHITE;
+            }
+
+            .date {
+              color: #2A8EC4;
+            }
+          }
+        }
+      }
+    }
+
+  } // End media query for aspect ratio
+} // End "body"
+//-------- END LANDSCAPE LAYOUT ----------//
+
+
+
+// -----------------------------------------------------------
+
+
+
+//---------- PORTRAIT LAYOUT ----------//
+body {
+  @media (aspect-ratio <= 1) {
+
+    main {
+      display: flex;
+      flex-direction: column;
+      width: 100vw;
+    }
+
+    #mainPane {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      padding: 0 48px;
+
+      header {
+        text-align: center;
+
+        #mascot {
+          margin-top: 24px;
+          margin-bottom: 20px;
+          height: 128px;
+          opacity: 0.5;
+        }
+
+        h1 {
+          text-align: center;
+
+          color: WHITE;
+          text-transform: uppercase;
+          letter-spacing: 0.4em;
+        }
+
+        .divider {
+          height: 1px;
+          max-width: 600px;
+          margin: 16px 48px;
+
+          background: #252525;
+        }
+
+        .subtitle {
+          text-align: center;
+
+          color: #949494;
+          text-transform: uppercase;
+          letter-spacing: 0.2em;
+        }
+      }
+
+      #episodePlayer {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+        background: WHITE;
+        border-top: 2px solid #DDDDDD;
+
+        z-index: 9999;
+
+        #playerContainer {
+          background: WHITE;
+          border-radius: 0px;
+        }
+      }
+
+      #nextShowCalendar {
+        margin-bottom: 24px;
+
+        text-align: center;
+
+        h3 {
+          margin: 0;
+
+          text-align: left;
+
+          color: #3C3C3C;
+          font-size: 12px;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+
+        #nextShowDate {
+          margin: 0;
+          margin-bottom: 8px;
+
+          color: #656565;
+          font-size: 14px;
+          font-weight: bold;
+          text-align: left;
+        }
+
+        a {
+          color: #4DBEFF;
+          font-size: 12px;
+          text-transform: uppercase;
+          text-decoration: none;
+        }
+      }
+
+      #attribution {
+        margin-bottom: 48px;
+
+        color: #394B5D;
+        font-size: 12px;
+        font-weight: bold;
+
+        a {
+          color: #4DBEFF;
+          text-decoration: none;
+        }
+      }
+    }
+
+    #episodeDirectoryPane {
+      width: 100%;
+
+      #episodeDirectoryWindow {
+        background: WHITE;
+        padding: 8px;
+
+        .episode-list-item {
+          position: relative;
+          padding-top: 4px;
+          padding-bottom: 4px;
+
+          &:not(:last-child)::after {
+            content: ""; /* Creates the divider */
+            position: absolute;
+            bottom: 0; /* Position it at the bottom of the list item */
+            left: 12px; /* Add padding to the left of the divider */
+            right: 12px; /* Add padding to the right of the divider */
+            height: 1px; /* Thickness of the divider */
+            background-color: #EEE; /* Divider color */
+          }
+
+          & > .content {
+            padding: 8px;
+            border-radius: 4px;
+
+            cursor: pointer;
+
+            h4 {
+              margin-bottom: 0.2em;
+
+              color: BLACK;
+              font-size: 13px;
+              font-weight: bold;
+            }
+
+            .date {
+              margin-bottom: 0;
+
+              color: #A7A7A7;
+              font-size: 10px;
+            }
+          }
+
+          &:hover > .content {
+            background: #EEEEEE;
+          }
+
+          &.selected > .content {
+            background: #4CBBF7;
+
+            cursor: default;
+
+            h4 {
+              color: WHITE;
+            }
+
+            .date {
+              color: #2A8EC4;
+            }
+          }
+        }
+      }
+    }
+
+  } // End media query for aspect ratio
+} // End "body"
+//-------- END LANDSCAPE LAYOUT ----------//

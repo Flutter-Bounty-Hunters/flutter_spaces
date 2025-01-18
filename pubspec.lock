@@ -62,6 +62,15 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
+  captivate:
+    dependency: "direct main"
+    description:
+      path: "."
+      ref: HEAD
+      resolved-ref: "5b4f2fcbff928758048837bf489307617d748e1d"
+      url: "https://github.com/Flutter-Bounty-Hunters/captivate"
+    source: git
+    version: "0.1.0"
   charcode:
     dependency: transitive
     description:
@@ -279,7 +288,7 @@ packages:
     source: hosted
     version: "4.3.0"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf
@@ -346,10 +355,10 @@ packages:
     dependency: transitive
     description:
       name: markdown
-      sha256: ef2a1298144e3f985cc736b22e0ccdaf188b5b3970648f2d9dc13efd1d9df051
+      sha256: "935e23e1ff3bc02d390bad4d4be001208ee92cc217cb5b5a6c19bc14aaa318c1"
       url: "https://pub.dev"
     source: hosted
-    version: "7.2.2"
+    version: "7.3.0"
   mason_logger:
     dependency: transitive
     description:
@@ -514,10 +523,10 @@ packages:
     dependency: transitive
     description:
       name: sass
-      sha256: c6abff6269edf6dc6767fde2ead064cbf939b8982656bd6a2097eda5d9c8f42b
+      sha256: "4577992b848d9bc5f4934dc30a73bb078d3f1f73c16d7b36bffdce220c1733c8"
       url: "https://pub.dev"
     source: hosted
-    version: "1.83.1"
+    version: "1.83.4"
   shelf:
     dependency: transitive
     description:
