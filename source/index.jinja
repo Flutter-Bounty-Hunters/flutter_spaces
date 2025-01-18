@@ -36,91 +36,64 @@
 
   <body>
     <main>
-      <header>
-        <div class="foreground">
-          <img src="images/homepage/logo_circle.png" class="logo">
+      <div id="mainPane">
+        <div style="flex: 2;">&nbsp;</div>
 
-          <div class="title">WEEKLY FLUTTER SPACE</div>
+        <header>
+          <img id="mascot" src="/images/homepage/dash-astronaut.png">
+          <h1>Flutter Spaces</h1>
+          <div class="divider">&nbsp;</div>
+          <span class="subtitle">Weekly Flutter Conversations</span>
+        </header>
 
-          <!-- This spacer has size zero unless screen is narrow -->
-          <!-- On narrow screen, this spacer takes up the same height as the phone image -->
-          <div class="spacer-for-narrow">&nbsp;</div>
+        <div style="flex: 2;">&nbsp;</div>
 
-          <div class="upsell">Join us every week for &NewLine; any and all Flutter topics!</div>
-
-          <div class="hosts">
-            <p class="title">HOSTS</p>
-            <div class="host-container">
-              <div class="host matt">
-                <img src="/images/homepage/photo_matt.png">
-                <p>Matt Carroll</p>
-              </div>
-              <div class="host ray">
-                <img src="/images/homepage/photo_ray.png">
-                <p>Ray Li</p>
-              </div>
-            </div>
+        <div id="episodePlayer">
+          <div id="playerContainer" style="margin: auto; max-width: 500px; height: 200px; overflow: hidden;">
+            <iframe style="width: 100%; height: 200px;" frameborder="no" scrolling="no" allow="clipboard-write" seamless src="https://player.captivate.fm/episode/{{ loadedEpisodes[0].id }}"></iframe>
           </div>
         </div>
 
-        <div class="background">
-          <div class="waves-and-phone">
-            <div class="sound-waves-left">&nbsp;</div>
-            <div class="phone">
-              <img src="/images/homepage/phone-space-preview.png">
+        <div style="flex: 2;">&nbsp;</div>
 
-              <div class="next-show-date">
-                <p class="title">NEXT SPACE</p>
-                <!-- This display date is filled by JS -->
-                <p id="nextShowDate" class="date">&nbsp;</p>
-              </div>
+        <div id="nextShowCalendar">
+          <div style="display: flex; flex-direction: row; align-items: flex-start;">
+            <div style="font-size: 30px; margin-right: 8px; margin-top:-4px;">📅</div>
+            <div style="display: flex; flex-direction: column;">
+              <h3>Next Space</h3>
+              <p id="nextShowDate">&nbsp;</p>
             </div>
-            <div class="sound-waves-right">&nbsp;</div>
           </div>
+          <a target="_blank" href="https://calendar.google.com/calendar/event?action=TEMPLATE&amp;tmeid=NWxsNHN2dHZqZ2U0Zm1xZWZkM3ZrMzdsdGRfMjAyNTAxMjJUMjAwMDAwWiBlODJhNDE5M2IwODVhOWYwOTAyMjU5YzJmNjIwNDkxYjUyYTk1MmUxMWQxOTRmMTkzODM0ZTMxZmRhZDE1N2NiQGc&amp;tmsrc=e82a4193b085a9f0902259c2f620491b52a952e11d194f193834e31fdad157cb%40group.calendar.google.com&amp;scp=ALL">Add to Calendar</a>
         </div>
-      </header>
 
-      <div id="x-divider" style="display: flex;">
-        <hr class="divider" style="flex: 1; align-self: center;">
-        <img src="/images/homepage/x-logo.png" class="logo">
-        <hr class="divider" style="flex: 1; align-self: center;">
+        <div style="flex: 2;">&nbsp;</div>
+
+        <div id="attribution">
+          <p>Built with ❤️ by <a href="https://superdeclarative.com" target="_blank">Matt Carroll</a></p>
+        </div>
       </div>
 
-      <p class="follow-hosts">Follow <a href="https://x.com/suprdeclarative" target="_blank">Matt</a> and <a href="https://x.com/RayLiVerified" target="_blank">Ray</a> on X</p>
-
-      <div id="post-timeline">
-        <div id="episodePlayer">
-          <div style="margin: auto; max-width: 500px; height: 200px; margin-bottom: 20px; border-radius: 6px; overflow: hidden;"><iframe style="width: 100%; height: 200px;" frameborder="no" scrolling="no" allow="clipboard-write" seamless src="https://player.captivate.fm/episode/{{ loadedEpisodes[0].id }}"></iframe></div>
-        </div>
-        {% for episode in loadedEpisodes %}
-          <div onclick="loadEpisode('{{ episode.id }}')">
-            <h4>{{ episode.title }}</h4>
-            <p>{{ episode.id }}</p>
-            <br>
-            <br>
+      <div id="episodeDirectoryPane">
+        <div id="episodeDirectoryWindow">
+          {% for episode in loadedEpisodes %}
+          <div class="episode-list-item" episodeId="{{ episode.id }}">
+            <div class="content">
+              <h4>{{ episode.title }}</h4>
+              <p class="date">{{ episode.date }}</p>
+            </div>
           </div>
-        {% endfor %}
-
-        {% for episode in episodes %}
-
-          {% if episode.podcast_id %}
-          <div style="margin: auto; max-width: 500px; height: 200px; margin-bottom: 20px; border-radius: 6px; overflow: hidden;"><iframe style="width: 100%; height: 200px;" frameborder="no" scrolling="no" allow="clipboard-write" seamless src="https://player.captivate.fm/episode/{{ episode.podcast_id }}"></iframe></div>
-          {% endif %}
-
-          <br><br><br>
-        {% endfor %}
-
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+          {% endfor %}
+        </div>
       </div>
     </main>
-    <footer>
-      <hr class="divider">
-      <h4>BROUGHT TO YOU BY</h4>
-      <p><a href="https://codelessly.com/" target="_blank">Codelessy</a> <a href="https://flutterbountyhunters.com" target="_blank">Flutter Bounty Hunters</a> <a href="https://superdeclarative.com" target="_blank">SuperDeclarative!</a></p>
-    </footer>
 
     <script>
       onload = (function() {
+        // Select the first episode because Captivate automatically puts
+        // that episode in the show player.
+        document.querySelector('.episode-list-item').classList.add('selected');
+
         // Find the date of the next show.
         var nextShowDate = new Date({{ calendar.next.timestamp }});
 
@@ -139,15 +112,26 @@
 
         // Set the next show date display string.
         var nextShowDateDisplay = document.getElementById("nextShowDate");
-        nextShowDateDisplay.innerHTML = formattedDate + "<BR>" + formattedTime;
+        nextShowDateDisplay.innerHTML = formattedDate + " • " + formattedTime;
       });
 
-      loadEpisode = function(id) {
-        console.log("Loading episode: " + id);
+      // Attach click handlers to all episodes in the directory.
+      const episodeListItems = document.querySelectorAll('.episode-list-item');
+      episodeListItems.forEach(episode => {
+        episode.addEventListener('click', () => {
+          var episodeId = episode.getAttribute("episodeId");
+          console.log("Loading episode: " + episodeId);
 
-        var episodePlayer = document.getElementById("episodePlayer");
-        episodePlayer.innerHTML = `<div style="margin: auto; max-width: 500px; height: 200px; margin-bottom: 20px; border-radius: 6px; overflow: hidden;"><iframe style="width: 100%; height: 200px;" frameborder="no" scrolling="no" allow="clipboard-write" seamless src="https://player.captivate.fm/episode/${id}"></iframe></div>`;
-      }
+          var episodePlayer = document.getElementById("playerContainer");
+          episodePlayer.innerHTML = `<iframe style="width: 100%; height: 200px;" frameborder="no" scrolling="no" allow="clipboard-write" seamless src="https://player.captivate.fm/episode/${episodeId}"></iframe>`;
+
+          // Remove the "selected" class from all items
+          episodeListItems.forEach(el => el.classList.remove('selected'));
+
+          // Add the "selected" class to the clicked item
+          episode.classList.add('selected');
+        });
+      });
     </script>
   </body>
 </html>

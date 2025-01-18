@@ -67,7 +67,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "5c5e30832e663a0fc97aec8ec5c022ab3247ee59"
+      resolved-ref: "5b4f2fcbff928758048837bf489307617d748e1d"
       url: "https://github.com/Flutter-Bounty-Hunters/captivate"
     source: git
     version: "0.1.0"
@@ -288,7 +288,7 @@ packages:
     source: hosted
     version: "4.3.0"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       sha256: d6f56758b7d3014a48af9701c085700aac781a92a87a62b1333b46d8879661cf

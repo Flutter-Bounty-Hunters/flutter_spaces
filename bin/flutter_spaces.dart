@@ -30,10 +30,10 @@ Future<void> main(List<String> arguments) async {
 
 (String username, String apiToken) _loadCaptivateCredentials() {
   // REQUIRED: Environment variable called "captivate_username"
-  final captivateUsername = Platform.environment["captivate_username"];
+  final captivateUsername = Platform.environment["CAPTIVATE_USERNAME"] ?? Platform.environment["captivate_username"];
 
   // REQUIRED: Environment variable called "captivate_token"
-  final captivateApiToken = Platform.environment["captivate_token"];
+  final captivateApiToken = Platform.environment["CAPTIVATE_TOKEN"] ?? Platform.environment["captivate_token"];
 
   if (captivateUsername == null) {
     print("Missing environment variable for Captivate username.");

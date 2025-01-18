@@ -1,4 +1,5 @@
 import 'package:captivate/captivate.dart';
+import 'package:intl/intl.dart';
 import 'package:static_shock/static_shock.dart';
 
 class EpisodeLoader implements DataLoader {
@@ -36,6 +37,7 @@ class EpisodeLoader implements DataLoader {
     context.log.detail("Loaded ${response.episodes.length} episodes.");
 
     context.log.info("Done loading episodes from Captivate.");
+
     return {
       // Ordered from most recent to least recent.
       "loadedEpisodes": [
@@ -43,8 +45,23 @@ class EpisodeLoader implements DataLoader {
           {
             "id": episode.id,
             "title": episode.title,
+            "date": episode.formattedPublishedDate,
           }
       ],
     };
+  }
+}
+
+extension on Episode {
+  static final captivateDateFormat = DateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
+  static final presentationDateFormat = DateFormat("MMMM dd, yyyy");
+
+  String get formattedPublishedDate {
+    if (publishedDate == null) {
+      return "Now Available";
+    }
+
+    final dateTime = captivateDateFormat.parse(publishedDate!);
+    return presentationDateFormat.format(dateTime);
   }
 }
