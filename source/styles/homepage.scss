@@ -69,6 +69,11 @@ body {
         width: 600px;
 
         #playerContainer {
+          margin: auto;
+          max-width: 500px;
+          height: 200px;
+          overflow: hidden;
+
           background: WHITE;
           border-radius: 6px;
         }
@@ -265,8 +270,17 @@ body {
         z-index: 9999;
 
         #playerContainer {
+          margin: auto;
+          max-width: 500px;
+          height: 200px;
+          overflow: hidden;
+
           background: WHITE;
           border-radius: 0px;
+
+          iframe {
+            height: 200px;
+          }
         }
       }
 
@@ -325,6 +339,9 @@ body {
         background: WHITE;
         padding: 8px;
 
+        // Make space for the bottom mounted player.
+        padding-bottom: 224px;
+
         .episode-list-item {
           position: relative;
           padding-top: 4px;
@@ -341,7 +358,7 @@ body {
           }
 
           & > .content {
-            padding: 8px;
+            padding: 8px 12px;
             border-radius: 4px;
 
             cursor: pointer;
@@ -350,7 +367,7 @@ body {
               margin-bottom: 0.2em;
 
               color: BLACK;
-              font-size: 13px;
+              font-size: 16px;
               font-weight: bold;
             }
 
@@ -358,7 +375,7 @@ body {
               margin-bottom: 0;
 
               color: #A7A7A7;
-              font-size: 10px;
+              font-size: 14px;
             }
           }
 
