@@ -3,8 +3,11 @@ on:
   push:
     branches:
       - main
+
   schedule:
-    - cron: '0 17 * * 6' # 9AM Pacific Time (17:00 UTC) every Saturday
+    - cron: '0 2 * * 4' # 6PM Pacific Time every Wednesday (2:00 UTC on Thurs)
+
+  workflow_dispatch:
 
 jobs:
   build:
