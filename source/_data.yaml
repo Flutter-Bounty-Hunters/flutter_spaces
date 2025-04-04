@@ -1,4 +1,34 @@
 episodes:
+  # Flutter and Dart hangout - April 2, 2025
+  - podcast_id: 20b17057-3b0e-475d-aab7-07d3f706a228
+
+  # Flutter TDD vs test last ft Casey and Tomek
+  - podcast_id: 379c5809-c022-4190-b313-d1ca180504eb
+
+  # Reactive forms in Flutter with Vasilich
+  - podcast_id: 3dc299e8-6345-48db-998c-26860f7ba123
+
+  # Share what you're building with Flutter and Dart (March 5, 2025)
+  - podcast_id: ff853476-dab2-4b10-89cf-c51b20982d8c
+
+  # Dart Globe on the server with Chima
+  - podcast_id: bbad780e-69c6-401a-bc4d-d668086c1cf7
+
+  # Invoice Ninja and It's All Widgets with Hillel Coren
+  - podcast_id: 92c2ee4c-b051-4cb3-ab38-4a2e8d1df030
+
+  # Flutter Discontinues 6 Packages, Releaes Flutter 3.29, Dart 3.7
+  - podcast_id: 543da246-cb1e-4f00-aa59-830e2fbce2f0
+
+  # Shadcn UI for Flutter ft Alexandru Mariuti
+  - podcast_id: 888554b7-2cb9-46fe-be2b-00084ecf7c3e
+
+  # Flutter Puts Go Router into Maintenance Mode ft Chris Sells
+  - podcast_id: 01cde781-1f1d-4049-a950-1dbfd536fab6
+
+  # Flutter Education with Hungrimind ft Tadas and Robert
+  - podcast_id: 9782be6d-fcbc-4722-bafb-5386aa414277
+
   # Testing Flutter with Patrol ft Mateusz
   - podcast_id: a7ec5ceb-1363-45d2-8f5d-17fdc58384ce
 
